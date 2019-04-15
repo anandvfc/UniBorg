@@ -16,15 +16,15 @@ async def _(event):
     if event.fwd_from:
         return
     await asyncio.sleep(4)
-    await event.edit("Restarting 🔴 ...\n❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
+    await event.edit("Restarting 🔴 ...\n❕Hello @Anand_VFC , Your Userbot Is Being Restarted.❕")
     await asyncio.sleep(4)
-    await event.edit("Restarting ⚫ ...\n❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
+    await event.edit("Restarting ⚫ ...\n❗Hello @Anand_VFC , Your Userbot Is Being Restarted.❗")
     await asyncio.sleep(4)
-    await event.edit("Restarting 🔵 ...\n❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
+    await event.edit("Restarting 🔵 ...\n❕Hello @Anand_VFC , Your Userbot Is Being Restarted.❕")
     await asyncio.sleep(4)
-    await event.edit("Restarting ✅...\n ❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
+    await event.edit("Restarting ✅...\n ❗Hello @Anand_VFC , Your Userbot Is Being Restarted.❗")
     await asyncio.sleep(4)
-    await event.edit("♻️**Hello** @bohthardbohthard , **Your Userbot Has Been Restarted.**♻️")
+    await event.edit("♻️**Hello** @Anand_VFC , **Your Userbot Has Been Restarted.**♻️")
     await borg.disconnect()
     # https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
