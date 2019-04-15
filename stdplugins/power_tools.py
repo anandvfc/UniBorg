@@ -15,15 +15,15 @@ import sys
 async def _(event):
     if event.fwd_from:
         return
-    await asyncio.sleep(3)
-    await event.edit("Restarting 🔴 ...\n`❕**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❕")
-    await asyncio.sleep(3)
-    await event.edit("Restarting ⚫ ...\n`❗**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❗")
-    await asyncio.sleep(3)
-    await event.edit("Restarting 🔵 ...\n`❕**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❕")
-    await asyncio.sleep(3)
-    await event.edit("Restarting ✅...\n` ❗**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❗")
-    await asyncio.sleep(3)
+    await asyncio.sleep(4)
+    await event.edit("Restarting 🔴 ...\n`❕Hello @bohthardbohthard , **Your Userbot Is Being Restarted.❕")
+    await asyncio.sleep(4)
+    await event.edit("Restarting ⚫ ...\n`❗Hello @bohthardbohthard , **Your Userbot Is Being Restarted.❗")
+    await asyncio.sleep(4)
+    await event.edit("Restarting 🔵 ...\n`❕Hello @bohthardbohthard , **Your Userbot Is Being Restarted.❕")
+    await asyncio.sleep(4)
+    await event.edit("Restarting ✅...\n` ❗Hello @bohthardbohthard , **Your Userbot Is Being Restarted.❗")
+    await asyncio.sleep(4)
     await event.edit("♻️**Hello** @bohthardbohthard , **Your Userbot Has Been Restarted.**♻️")
     await borg.disconnect()
     # https://archive.is/im3rt
