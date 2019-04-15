@@ -45,7 +45,6 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await asyncio.sleep(4)
     await event.edit("""This Userbot Is Made With The Help Of https://github.com/ravana69/uniborg""")
     await asyncio.sleep(4)
     await event.edit("""This Userbot Is Made With The Help Of https://github.com/ravana69/uniborg""")
