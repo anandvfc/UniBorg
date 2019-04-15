@@ -22,9 +22,9 @@ async def _(event):
      await asyncio.sleep(2)
     await event.edit("Restarted. `.ping` me or `.helpme` to check if I am online")
     await borg.disconnect()
-    # https://archive.is/im3rt
+     https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
-    # You probably don't need it but whatever
+     You probably don't need it but whatever
     quit()
 
 
