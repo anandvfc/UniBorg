@@ -16,13 +16,13 @@ async def _(event):
     if event.fwd_from:
         return
     await asyncio.sleep(4)
-    await event.edit("Restarting 🔴 ...\n`❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
+    await event.edit("Restarting 🔴 ...\n❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
     await asyncio.sleep(4)
-    await event.edit("Restarting ⚫ ...\n`❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
+    await event.edit("Restarting ⚫ ...\n❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
     await asyncio.sleep(4)
-    await event.edit("Restarting 🔵 ...\n`❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
+    await event.edit("Restarting 🔵 ...\n❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
     await asyncio.sleep(4)
-    await event.edit("Restarting ✅...\n` ❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
+    await event.edit("Restarting ✅...\n ❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
     await asyncio.sleep(4)
     await event.edit("♻️**Hello** @bohthardbohthard , **Your Userbot Has Been Restarted.**♻️")
     await borg.disconnect()
@@ -36,5 +36,8 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Turning off ...Manually turn me on later")
+    await asyncio.sleep(4)
+    await event.edit("Windows 98 Shutting Down Safely....")
+    await asyncio.sleep(4)
+    await event.edit("Windows 98 Is Shutdown, Turn On Manually")
     await borg.disconnect()
