@@ -16,13 +16,13 @@ async def _(event):
     if event.fwd_from:
         return
     await asyncio.sleep(3)
-    await event.edit("Restarting 🔴 ...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting 🔴 ...\n`❕**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❕")
     await asyncio.sleep(3)
-    await event.edit("Restarting ⚫ ...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting ⚫ ...\n`❗**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❗")
     await asyncio.sleep(3)
-    await event.edit("Restarting 🔵 ...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting 🔵 ...\n`❕**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❕")
     await asyncio.sleep(3)
-    await event.edit("Restarting ✅...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting ✅...\n` ❗**Hello** @bohthardbohthard , **Your Userbot Is Being Restarted.**❗")
     await asyncio.sleep(3)
     await event.edit("♻️**Hello** @bohthardbohthard , **Your Userbot Has Been Restarted.**♻️")
     await borg.disconnect()
