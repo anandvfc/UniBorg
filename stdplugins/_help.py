@@ -10,7 +10,7 @@ async def _(event):
 Python {}
 Telethon {}
 
-UserBot Forked from https://github.com/expectocode/uniborg""".format(
+UserBot Forked from https://github.com/ravana69/uniborg""".format(
         sys.version,
         __version__
     )
@@ -38,11 +38,11 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@borg.on(events.NewMessage(pattern=r"\.config", outgoing=True))  # pylint:disable=E0602
+@borg.on(events.NewMessage(pattern=r"\.repo", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by @UniBorg""")
+    await event.edit("""This Userbot Is Made With The Help Of https://github.com/ravana69/uniborg""")

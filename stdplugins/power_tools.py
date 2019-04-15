@@ -15,12 +15,16 @@ import sys
 async def _(event):
     if event.fwd_from:
         return
-    # await asyncio.sleep(2)
-    # await event.edit("Restarting [██░] ...\n`.ping` me or `.helpme` to check if I am online")
-    # await asyncio.sleep(2)
-    # await event.edit("Restarting [███]...\n`.ping` me or `.helpme` to check if I am online")
-    # await asyncio.sleep(2)
-    await event.edit("Restarted. `.ping` me or `.helpme` to check if I am online")
+    await asyncio.sleep(4)
+    await event.edit("Restarting 🔴 ...\n❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
+    await asyncio.sleep(4)
+    await event.edit("Restarting ⚫ ...\n❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
+    await asyncio.sleep(4)
+    await event.edit("Restarting 🔵 ...\n❕Hello @bohthardbohthard , Your Userbot Is Being Restarted.❕")
+    await asyncio.sleep(4)
+    await event.edit("Restarting ✅...\n ❗Hello @bohthardbohthard , Your Userbot Is Being Restarted.❗")
+    await asyncio.sleep(4)
+    await event.edit("♻️**Hello** @bohthardbohthard , **Your Userbot Has Been Restarted.**♻️")
     await borg.disconnect()
     # https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -32,5 +36,10 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Turning off ...Manually turn me on later")
+    await asyncio.sleep(4)
+    await event.edit("Windows 98 Shutting Down Safely....")
+    await asyncio.sleep(4)
+    await event.edit("Your PC Has Been Shutdown, Turn Me On Manually")
     await borg.disconnect()
+    
+    

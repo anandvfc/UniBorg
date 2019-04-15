@@ -1,12 +1,12 @@
 """Speech to Text
-Syntax: .stt <Language Code> as reply to a speech message"""
+Syntax: .sptt <Language Code> as reply to a speech message"""
 from telethon import events
 import requests
 import os
 from datetime import datetime
 
 
-@borg.on(events.NewMessage(pattern=r"\.stt (.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.sptt (.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -31,10 +31,10 @@ async def _(event):
             }
             data = open(required_file_name, "rb").read()
             response = requests.post(
-                "https://stream.watsonplatform.net/speech-to-text/api/v1/recognize",
+                "https://gateway-lon.watsonplatform.net/speech-to-text/api/v1/recognize",
                 headers=headers,
                 data=data,
-                auth=(Config.IBM_WATSON_CRED_USERNAME, Config.IBM_WATSON_CRED_PASSWORD)
+                auth=('apikey', Config.IBM_WATSON_CRED_PASSWORD)
             )
             r = response.json()
             if "results" in r:
