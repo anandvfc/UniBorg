@@ -16,15 +16,15 @@ async def _(event):
     if event.fwd_from:
         return
     await asyncio.sleep(3)
-    await event.edit("Restarting [🔴] ...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting 🔴 ...\n`.ping` me or `.helpme` to check if I am online")
     await asyncio.sleep(3)
-    await event.edit("Restarting [⚫] ...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting ⚫ ...\n`.ping` me or `.helpme` to check if I am online")
     await asyncio.sleep(3)
-    await event.edit("Restarting [🔵] ...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting 🔵 ...\n`.ping` me or `.helpme` to check if I am online")
     await asyncio.sleep(3)
-    await event.edit("Restarting [✅]...\n`.ping` me or `.helpme` to check if I am online")
+    await event.edit("Restarting ✅...\n`.ping` me or `.helpme` to check if I am online")
     await asyncio.sleep(3)
-    await event.edit("**♻️Restarted♻️** `.ping` me or `.helpme` to check if I am online")
+    await event.edit("♻️**Restarted Successfully** `.ping` me or `.helpme` to check if I am online♻️")
     await borg.disconnect()
     # https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
