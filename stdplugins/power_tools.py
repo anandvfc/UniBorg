@@ -44,7 +44,7 @@ async def _(event):
     
     
     
-    borg.on(events.NewMessage(pattern=r"\.repo", outgoing=True))
+    @borg.on(events.NewMessage(pattern=r"\.repo", outgoing=True))
 
 async def _(event):
 
