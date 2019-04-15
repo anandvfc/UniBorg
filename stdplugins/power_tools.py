@@ -39,5 +39,19 @@ async def _(event):
     await asyncio.sleep(4)
     await event.edit("Windows 98 Shutting Down Safely....")
     await asyncio.sleep(4)
-    await event.edit("Windows 98 Is Shutdown, Turn On Manually")
+    await event.edit("Your PC Has Been Shutdown, Turn Me On Manually")
     await borg.disconnect()
+    
+    
+    
+    borg.on(events.NewMessage(pattern=r"\.repo", outgoing=True))
+
+async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    await asyncio.sleep(4)
+
+    await event.edit("https://www.github.com/ravana69/uniborg")
