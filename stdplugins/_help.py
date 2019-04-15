@@ -38,7 +38,7 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@borg.on(events.NewMessage(pattern=r"\.config", outgoing=True))  # pylint:disable=E0602
+@borg.on(events.NewMessage(pattern=r"\.repo", outgoing=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
