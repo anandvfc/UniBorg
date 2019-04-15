@@ -45,4 +45,4 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""Telethon UserBot powered by demo""")
+    await event.edit("""This Userbot Is Made With The Help Of https://github.com/ravana69/uniborg""")
