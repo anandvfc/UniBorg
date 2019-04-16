@@ -10,7 +10,7 @@ async def _(event):
 Python {}
 Telethon {}
 
-UserBot Forked from https://github.com/ravana69/uniborg""".format(
+UserBot Forked from https://github.com/anandvfc/uniborg""".format(
         sys.version,
         __version__
     )
@@ -45,4 +45,4 @@ async def _(event):
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""This Userbot Is Made With The Help Of https://github.com/ravana69/uniborg""")
+    await event.edit("""This Userbot Is Made With The Help Of https://github.com/anandvfc/uniborg""")

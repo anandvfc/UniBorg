@@ -1,5 +1,7 @@
-from sqlalchemy import Column, String
 from sql_helpers import SESSION, BASE
+except ImportError:
+    raise Exception("Hello!")
+from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
 
 class PMPermit(BASE):
