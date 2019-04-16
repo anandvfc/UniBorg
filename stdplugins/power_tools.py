@@ -37,9 +37,9 @@ async def _(event):
     if event.fwd_from:
         return
     await asyncio.sleep(4)
-    await event.edit("Windows 98 Shutting Down Safely....")
+    await event.edit("Your userbot is Shutting Down Safely....")
     await asyncio.sleep(4)
-    await event.edit("Your PC Has Been Shutdown, Turn Me On Manually")
+    await event.edit("Your Userbot Has Been Shutdown, Turn Me On Manually")
     await borg.disconnect()
     
     
