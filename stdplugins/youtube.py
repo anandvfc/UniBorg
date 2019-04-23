@@ -12,8 +12,8 @@ import time
 import youtube_dl
 
 
-@borg.on(events.NewMessage(pattern=r"\.youtube search (.*)", outgoing=True))
-@borg.on(events.MessageEdited(pattern=r"\.youtube search (.*)", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.yts (.*)", outgoing=True))
+@borg.on(events.MessageEdited(pattern=r"\.yts (.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return

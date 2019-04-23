@@ -91,7 +91,7 @@ async def _(event):
                         thumb=thumb,
                         attributes=document_attributes,
                         # progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        #     progress(d, t, event, c_time, "trying to upload")
+                        #     progress(d, t, event, c_time, "Uploading in progress")
                         # )
                     )
                 except Exception as e:
@@ -136,7 +136,7 @@ async def _(event):
             reply_to=event.message.id,
             thumb=thumb,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, event, c_time, "trying to upload")
+                progress(d, t, event, c_time, "Uploading in progress")
             )
         )
         end = datetime.now()
@@ -216,7 +216,7 @@ async def _(event):
                     )
                 ],
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, event, c_time, "trying to upload")
+                    progress(d, t, event, c_time, "Uploading in progress")
                 )
             )
         except Exception as e:
