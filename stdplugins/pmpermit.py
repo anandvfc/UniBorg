@@ -8,6 +8,7 @@ import json
 from telethon import events
 from telethon.tl import functions, types
 from sql_helpers.pmpermit_sql import is_approved, approve, disapprove, get_all_approved
+from uniborg.util import admin_cmd
 
 
 borg.storage.PM_WARNS = {}
@@ -17,7 +18,7 @@ borg.storage.PREV_REPLY_MESSAGE = {}
 BAALAJI_TG_USER_BOT = "My Master hasn't approved you to PM."
 TG_COMPANION_USER_BOT = "Please wait for his response and don't spam his PM."
 UNIBORG_USER_BOT_WARN_ZERO = "I am currently offline. Please do not SPAM me."
-UNIBORG_USER_BOT_NO_WARN = ""
+UNIBORG_USER_BOT_NO_WARN = "Hi! I will answer to your message soon. Please wait for my response and don't spam my PM. Thanks"
 
 
 @borg.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -33,6 +34,8 @@ async def monito_p_m_s(event):
     if Config.NO_P_M_SPAM and not sender.bot:
         chat = await event.get_chat()
         if not is_approved(chat.id) and chat.id != borg.uid:
+            logger.info(chat.stringify())
+            logger.info(borg.storage.PM_WARNS)
             if chat.id not in borg.storage.PM_WARNS:
                 borg.storage.PM_WARNS.update({chat.id: 0})
             if borg.storage.PM_WARNS[chat.id] == Config.MAX_FLOOD_IN_P_M_s:
@@ -50,7 +53,7 @@ async def monito_p_m_s(event):
             borg.storage.PREV_REPLY_MESSAGE[chat.id] = r
 
 
-@borg.on(events.NewMessage(pattern=r"\.approvepm ?(.*)", outgoing=True))
+@borg.on(admin_cmd("approvepm ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -61,13 +64,16 @@ async def approve_p_m(event):
             if not is_approved(chat.id):
                 if chat.id in borg.storage.PM_WARNS:
                     del borg.storage.PM_WARNS[chat.id]
+                if chat.id in borg.storage.PREV_REPLY_MESSAGE:
+                    await borg.storage.PREV_REPLY_MESSAGE[chat.id].delete()
+                    del borg.storage.PREV_REPLY_MESSAGE[chat.id]
                 approve(chat.id, reason)
-                await event.edit("😊Private Message Accepted😊")
+                await event.edit("Private Message Accepted")
                 await asyncio.sleep(3)
                 await event.delete()
 
 
-@borg.on(events.NewMessage(pattern=r"\.blockpm ?(.*)", outgoing=True))
+@borg.on(admin_cmd("blockpm ?(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -82,7 +88,7 @@ async def approve_p_m(event):
                 await borg(functions.contacts.BlockRequest(chat.id))
 
 
-@borg.on(events.NewMessage(pattern=r"\.list approved pms", outgoing=True))
+@borg.on(admin_cmd("list approved pms"))
 async def approve_p_m(event):
     if event.fwd_from:
         return
