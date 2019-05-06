@@ -2,13 +2,14 @@
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
+from uniborg.util import admin_cmd
 
 
-@borg.on(events.NewMessage(pattern=r"\.admin", outgoing=True))
+@borg.on(admin_cmd("admin"))
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "@admin : **⚠️$PÁM $PØTTËD⚠️**"
+    mentions = "@admin: **Spam Spotted**"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f"[\u2063](tg://user?id={x.id})"
@@ -19,4 +20,3 @@ async def _(event):
     else:
         await event.reply(mentions)
     await event.delete()
-
