@@ -4,9 +4,10 @@ Syntax: .weather <Location> """
 import requests
 import time
 from telethon import events
+from uniborg.util import admin_cmd
 
 
-@borg.on(events.NewMessage(pattern=r"\.weather (.*)", outgoing=True))
+@borg.on(admin_cmd("weather (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -16,19 +17,25 @@ async def _(event):
     if response_api["cod"] == 200:
         await event.edit(
             """{}
-{}°С temperature from {} to {}°С, wind {}m/s.clouds {}%, {}hpa
-Sunrise: {}
-Sunset: {}""".format(
+**Temperature**: {}°С
+    __minimium__: {}°С
+    __maximum__ : {}°С
+**Humidity**: {}%
+**wind**: {}m/s
+clouds: {}hpa
+**Sunrise**: {} UTC
+**Sunset**: {} UTC""".format(
                 input_str,
                 response_api["main"]["temp"],
                 response_api["main"]["temp_min"],
                 response_api["main"]["temp_max"],
+                response_api["main"]["humidity"],
                 response_api["wind"]["speed"],
                 response_api["clouds"]["all"],
-                response_api["main"]["pressure"],
+                # response_api["main"]["pressure"],
                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(response_api["sys"]["sunrise"])),
                 time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(response_api["sys"]["sunset"]))
             )
         )
     else:
-        await event.edit(response_api["message"])
+        await event.edit(response_api["message"]
