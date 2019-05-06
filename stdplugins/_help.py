@@ -1,16 +1,16 @@
 import sys
 from telethon import events, functions, __version__
+from uniborg.util import admin_cmd
 
 
-@borg.on(events.NewMessage(pattern=r"\.helpme", outgoing=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="helpme", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     help_string = """@UniBorg
 Python {}
 Telethon {}
-
-UserBot Forked from https://github.com/anandvfc/uniborg""".format(
+UserBot Forked from https://github.com/expectocode/uniborg""".format(
         sys.version,
         __version__
     )
@@ -27,10 +27,11 @@ UserBot Forked from https://github.com/anandvfc/uniborg""".format(
         )
         await event.delete()
     else:
-        await event.edit(help_string)
+        await event.reply(help_string)
+        await event.delete()
 
 
-@borg.on(events.NewMessage(pattern=r"\.dc", outgoing=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="dc"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -38,11 +39,11 @@ async def _(event):
     await event.edit(result.stringify())
 
 
-@borg.on(events.NewMessage(pattern=r"\.repo", outgoing=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="config"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     result = await borg(functions.help.GetConfigRequest())  # pylint:disable=E0602
     result = result.stringify()
     logger.info(result)  # pylint:disable=E0602
-    await event.edit("""This Userbot Is Made With The Help Of https://github.com/anandvfc/uniborg""")
+    await event.edit("""Telethon UserBot powered by @UniBorg""")
